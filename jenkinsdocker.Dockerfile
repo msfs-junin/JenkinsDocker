@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:lts
+FROM jenkins/jenkins:lts-jdk11
 
 USER root
 RUN apt-get update -qq && apt-get install -qqy \
