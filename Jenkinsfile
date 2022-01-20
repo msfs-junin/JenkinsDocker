@@ -2,23 +2,23 @@ node('DOTNETCORE'){
 	stage('SCM'){
 		checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/msfs-junin/JenkinsDocker']]])
 	}
-	stage('Build'){
+	stage('Construir'){
 		try{
 		//sh 'dotnet build ConsoleApp1'
 		}finally{
 		//archiveArtifacts artifacts: 'ConsoleApp1/*.*'
 		}
 	}
-	stage('Test'){
+	stage('Correr tests'){
 		echo 'Execute unit tests'
 	}
-	stage('Package'){
+	stage('Empaquetar'){
 		echo 'Zip it up'
 	}
-	stage('Deploy'){
+	stage('Desplegar'){
 		echo 'Push to deployment'
 	}
-	stage('Archive'){
+	stage('Archivar'){
 		//archiveArtifacts artifacts: 'ConsoleApp1/*.*'
 	}
 }
