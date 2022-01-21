@@ -4,7 +4,7 @@ node('DOTNETCORE'){
 	}
 	stage('Construir'){
 		try{
-		  sh 'dotnet build ConsoleApp1'
+		  sh '/usr/bin/dotnet build ConsoleApp1'
 		}finally{
 		//archiveArtifacts artifacts: 'ConsoleApp1/*.*'
 		}
