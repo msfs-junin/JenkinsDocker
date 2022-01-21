@@ -4,10 +4,10 @@ node('DOTNETCORE'){
 	}
 	stage('Construir'){
 		try{
-		  //sh '/usr/bin/dotnet build ConsoleApp1'
-		  sh 'whereis dotnet'
+		  sh 'dotnet build ConsoleApp1'
+		  //sh 'whereis dotnet'
 		}finally{
-		//archiveArtifacts artifacts: 'ConsoleApp1/*.*'
+		  archiveArtifacts artifacts: 'ConsoleApp1/*.*'
 		}
 	}
 	stage('Correr tests'){
@@ -20,6 +20,6 @@ node('DOTNETCORE'){
 		echo 'Push to deployment'
 	}
 	stage('Archivar'){
-		//archiveArtifacts artifacts: 'ConsoleApp1/*.*'
+		archiveArtifacts artifacts: 'ConsoleApp1/*.*'
 	}
 }
